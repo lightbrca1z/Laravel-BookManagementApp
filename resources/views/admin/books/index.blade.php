@@ -114,6 +114,12 @@
     </div>
     @endif
 
+    @if(session('error'))
+    <div style='color:red; background-color: #f8d7da; padding: 10px; margin-bottom: 20px; border: 1px solid #f5c6cb; border-radius: 4px;'>
+        {{ session('error') }}
+    </div>
+    @endif
+
     <a href="{{ route('admin.books.create') }}" class="btn btn-primary">新規登録</a>
 
     <table>
