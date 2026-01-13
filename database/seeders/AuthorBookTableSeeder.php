@@ -25,7 +25,8 @@ class AuthorBookTableSeeder extends Seeder
             -> all();
             
             //書籍にランダムに抜き出した2件の著者のID配列を関連付ける
-            $book->authors()->attach($authorIds);
+            //既存の関連付けを保持しつつ、新しいものを追加（重複を防ぐ）
+            $book->authors()->syncWithoutDetaching($authorIds);
         }
     }
 }
