@@ -6,6 +6,8 @@
 
 RailwayのLaravelサービスの**Variables**タブで以下を設定してください：
 
+#### 必須の環境変数
+
 ```
 APP_DEBUG=false
 APP_ENV=production
@@ -19,9 +21,17 @@ DB_USERNAME=${MYSQLUSER}
 DB_PASSWORD=${MYSQLPASSWORD}
 ```
 
+#### オプションの環境変数（推奨）
+
+```
+DB_CHARSET=utf8mb4
+DB_COLLATION=utf8mb4_unicode_ci
+```
+
 **重要：**
 - MySQLサービスとLaravelサービスを接続してください（MySQLサービスを選択 → Connect → Laravelサービスを選択）
 - 接続後、`MYSQLHOST`、`MYSQLDATABASE`などの変数が自動的に利用可能になります
+- `DB_CHARSET`と`DB_COLLATION`はデフォルト値がありますが、明示的に設定することを推奨します
 
 ### 2. Build Command（Settingsタブ → Build）
 
