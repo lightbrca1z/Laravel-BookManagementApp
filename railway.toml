@@ -1,3 +1,6 @@
 [deploy]
 # デプロイ前に Railway 上で実行される（mysql.railway.internal に接続できる）
 preDeployCommand = "php artisan migrate --force"
+
+# 初回のみ DB をリセットしてシードしたい場合（実行後は下の行に戻すこと）:
+# preDeployCommand = "/bin/sh -c \"php artisan migrate:fresh --force --seed\""
