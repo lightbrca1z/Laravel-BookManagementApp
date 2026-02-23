@@ -3,4 +3,6 @@
 # preDeployCommand = "php artisan migrate --force"
 
 # 初回のみ DB をリセットしてシードしたい場合（実行後は下の行に戻すこと）:
-preDeployCommand = "/bin/sh -c \"php artisan migrate:fresh --force --seed\""
+# preDeployCommand = "/bin/sh -c \"php artisan migrate:fresh --force --seed"
+
+preDeployCommand = "php artisan optimize:clear && php artisan migrate --force"
